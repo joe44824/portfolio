@@ -1,0 +1,118 @@
+export const expCards = [
+  {
+    logoPath: "fra.png",
+    title: "STEM Educator (Freelance)",
+    date: "July 2025 - Present",
+    toolImagesPaths: [
+      "python.png",
+      "raspberrypi.png",
+      "scratch.png",
+      "embedded.png",
+    ],
+    toolDescriptions: [
+      "Created Python learning modules with real-time coding exercises and automated feedback systems",
+      "Built Raspberry Pi projects for environmental monitoring with live sensor data visualization",
+      "Developed interactive Scratch games to teach programming fundamentals through visual storytelling",
+      "Designed embedded systems projects combining Arduino with sensors for robotics applications",
+    ],
+    responsibilities: [
+      "Designed project-based STEM curriculum",
+      "Taught Python fundamentals through interactive games",
+      "Guided robotics projects using Arduino",
+    ],
+    bgColor: "#323332",
+  },
+  {
+    logoPath: "singtel.png",
+    title: "DevOps Engineer (Intern)",
+    date: "September 2024 - June 2025",
+    toolImagesPaths: [
+      "linux.png",
+      "ansible.png",
+      "kubernetes.png",
+      "terraform.png",
+      "mysql.png",
+    ],
+    toolDescriptions: [
+      "Managed Linux server infrastructure and automated system monitoring with custom shell scripts",
+      "Implemented Ansible playbooks for consistent configuration management across development environments",
+      "Containerized applications with Kubernetes for improved scalability and deployment efficiency",
+      "Used Terraform to provision cloud resources and maintain infrastructure as code practices",
+      "Optimized MySQL database performance through query tuning and index management",
+    ],
+    responsibilities: [
+      "Implemented system monitoring solutions",
+      "Automated infrastructure using IaC tools",
+      "Developed security data analysis scripts",
+    ],
+    bgColor: "#f7f7f7",
+  },
+  {
+    logoPath: "sit.png",
+    title: "Software Engineer (Part-Time)",
+    date: "October 2023 - February 2024",
+    toolImagesPaths: [
+      "flutter.png",
+      "nodejs.png",
+      "javascript.png",
+      "firebase.png",
+      "docker.png",
+    ],
+    toolDescriptions: [
+      "Developed Flutter mobile applications with responsive UI designs and smooth animations",
+      "Built RESTful APIs with Node.js and Express for data processing and integration",
+      "Created interactive data visualizations using JavaScript charting libraries",
+      "Implemented Firebase authentication and real-time database solutions",
+      "Containerized applications with Docker for consistent deployment across environments",
+    ],
+    responsibilities: [
+      "Built React dashboard for urban farming analytics",
+      "Developed Express backend for sensor data",
+    ],
+    bgColor: "#f7f7f7",
+  },
+  {
+    logoPath: "sit.png",
+    title: "Software Engineer (Part-Time)",
+    date: "October 2022 - February 2023",
+    toolImagesPaths: [
+      "nodejs.png",
+      "react.png",
+      "javascript.png",
+      "docker.png",
+    ],
+    toolDescriptions: [
+      "Developed backend services with Node.js handling data processing and API integrations",
+      "Built React applications with state management and responsive component libraries",
+      "Implemented client-side logic and data manipulation with modern JavaScript",
+      "Created Docker containers for application deployment and environment consistency",
+    ],
+    responsibilities: [
+      "Created Flutter-Firebase dashboard with data viz",
+      "Implemented auth and Excel export features",
+    ],
+    bgColor: "#f7f7f7",
+  },
+  {
+    logoPath: "venture.png",
+    title: "Data Analyst (Intern)",
+    date: "April 2019 - July 2019",
+    toolImagesPaths: [
+      "tableau.png",
+      "r_language.png",
+      "rapidMiner.png",
+      "excel.png",
+    ],
+    toolDescriptions: [
+      "Created Tableau dashboards for data visualization and business intelligence reporting",
+      "Performed statistical analysis and data modeling using R programming",
+      "Used RapidMiner for predictive analytics and machine learning workflows",
+      "Developed Excel models for data analysis, reporting, and process automation",
+    ],
+    responsibilities: [
+      "Developed IoT data collection systems",
+      "Performed predictive maintenance analysis",
+    ],
+    bgColor: "#f7f7f7",
+  },
+];

@@ -1,31 +1,44 @@
 pipeline {
-    agent any
-    
-    tools {
-        nodejs "NodeJS 24"
+    agent {
+        kubernetes {
+            yamlFile 'jenkins/podTemplate.yaml'
+        }
     }
 
     options {
-        buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '30', numToKeepStr: '5')
+        buildDiscarder(logRotator(daysToKeepStr: '30', numToKeepStr: '5'))
     }
 
-    
     stages {
-        stage('Check Out') {
+        stage('Checkout') {
             steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/joe44824/portfolio.git']])
-            }
-        }
-        stage('NPM Build') {
-            steps {
-                sh 'npm install'
-                sh 'npm run build'
+                checkout scm
             }
         }
 
-        stage('Docker Build') {
+        stage('NPM Build') {
             steps {
-                sh 'docker build -t web-portfolio .' 
+                container('node') {
+                    sh 'npm install'
+                    sh 'npm run build'
+                }
+            }
+        }
+
+        stage('Docker Build & Push (Kaniko)') {
+            steps {
+                container('kaniko') {
+                    script {
+                        def image = "joe44824/web-portfolio:${env.BUILD_NUMBER}"
+                        sh """
+                          /kaniko/executor \
+                            --context ${WORKSPACE} \
+                            --dockerfile ${WORKSPACE}/Dockerfile \
+                            --destination=${image} \
+                            --cleanup
+                        """
+                    }
+                }
             }
         }
     }

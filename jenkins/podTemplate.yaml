@@ -3,19 +3,38 @@ kind: Pod
 spec:
   containers:
     - name: node
-      image: node:24
+      image: node:24-alpine
       command:
         - cat
       tty: true
+      resources:
+        requests:
+          memory: "512Mi"
+          cpu: "500m"
+        limits:
+          memory: "2Gi"
+          cpu: "2000m"
+
     - name: kaniko
-      image: gcr.io/kaniko-project/executor:latest
+      image: gcr.io/kaniko-project/executor:debug
       command:
-        - cat
+        - /busybox/cat
       tty: true
       volumeMounts:
         - name: docker-config
           mountPath: /kaniko/.docker
+      resources:
+        requests:
+          memory: "512Mi"
+          cpu: "500m"
+        limits:
+          memory: "1Gi"
+          cpu: "1000m"
+
   volumes:
     - name: docker-config
       secret:
         secretName: regcred
+        items:
+          - key: .dockerconfigjson
+            path: config.json

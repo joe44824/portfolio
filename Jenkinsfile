@@ -37,18 +37,18 @@ pipeline {
         stage('Docker Build & Push') {
             steps {
                 container('kaniko') {
-                    sh """
+                    sh '''
                         /kaniko/executor \
-                            --context=\${WORKSPACE} \
-                            --dockerfile=\${WORKSPACE}/Dockerfile \
-                            --destination=\${DOCKER_REGISTRY}/\${IMAGE_NAME}:\${IMAGE_TAG} \
-                            --destination=\${DOCKER_REGISTRY}/\${IMAGE_NAME}:latest \
+                            --context="${WORKSPACE}" \
+                            --dockerfile="${WORKSPACE}/Dockerfile" \
+                            --destination=${DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG} \
+                            --destination=${DOCKER_REGISTRY}/${IMAGE_NAME}:latest \
                             --cache=true \
                             --cache-ttl=24h \
                             --compressed-caching=false \
                             --snapshot-mode=redo \
                             --cleanup
-                    """
+                    '''
                 }
             }
         }
@@ -60,9 +60,6 @@ pipeline {
         }
         failure {
             echo "❌ Pipeline failed!"
-        }
-        cleanup {
-            deleteDir()
         }
     }
 }

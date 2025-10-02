@@ -62,7 +62,7 @@ pipeline {
             echo "❌ Pipeline failed!"
         }
         cleanup {
-            cleanWs()
+            deleteDir()
         }
     }
 }

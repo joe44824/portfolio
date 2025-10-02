@@ -14,7 +14,6 @@ pipeline {
     options {
         buildDiscarder(logRotator(daysToKeepStr: '30', numToKeepStr: '5'))
         timeout(time: 30, unit: 'MINUTES')
-        timestamps()
     }
 
     stages {
@@ -49,17 +48,6 @@ pipeline {
                             --compressed-caching=false \
                             --snapshot-mode=redo \
                             --cleanup
-                    """
-                }
-            }
-        }
-
-        stage('Update Deployment') {
-            steps {
-                container('node') {
-                    sh """
-                        echo "Image built and pushed: \${DOCKER_REGISTRY}/\${IMAGE_NAME}:\${IMAGE_TAG}"
-                        # Add kubectl commands here to update your deployment if needed
                     """
                 }
             }

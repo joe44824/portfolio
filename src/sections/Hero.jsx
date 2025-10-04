@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { sentences } from "../constants";
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
@@ -6,16 +7,6 @@ const Hero = () => {
   const [currentSentence, setCurrentSentence] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
-
-  const sentences = [
-    "DevOps Engineer with a strong passion for Kubernetes and container orchestration",
-    "Certified CKA (Certified Kubernetes Administrator) with hands-on experience managing production-grade clusters",
-    "Enthusiastic about system design and architecture, especially building scalable and resilient infrastructures",
-    "Thrive on solving complex technical challenges and optimizing deployment pipelines",
-    "Experienced in CI/CD, infrastructure as code (IaC), and cloud-native tooling",
-    "Adept at troubleshooting, performance tuning, and implementing automation to reduce manual overhead",
-    "Love staying on the cutting edge of DevOps practices, experimenting with new tools, and sharing knowledge",
-  ];
 
   // Typewriter effect
   useEffect(() => {

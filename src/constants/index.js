@@ -1,7 +1,19 @@
+export const sentences = [
+  "Hello and welcome! I'm Zaw Wana, but please feel free to call me Joe",
+  "A recent Computing Science graduate from SIT (2025), passionate about modern infrastructure and automation",
+  "I specialize in DevOps Engineering with deep expertise in Kubernetes, container orchestration, and cloud-native technologies",
+  "Constantly exploring cutting-edge DevOps practices, I enjoy experimenting with new tools and sharing knowledge through technical blogs and community contributions",
+  "Currently building out my Homelab infrastructure, where I'm automating workflows with n8n and implementing GitOps practices",
+  "I maintain a self-hosted Kubernetes cluster running on a Hypervisor at home - because learning never stops after hours",
+  "In fact, this very portfolio is deployed as a pod within my home Kubernetes cluster, demonstrating real-world DevOps in action",
+  "Working on showcasing my complete GitOps pipeline using ArgoCD and Terraform for end-to-end automation",
+  "When I'm not orchestrating containers, you'll find me contributing to open-source projects or writing about my Homelab experiments",
+];
+
 export const expCards = [
   {
     logoPath: "fra.png",
-    title: "STEM Educator (Freelance)",
+    title: "STEM Educator",
     date: "July 2025 - Present",
     toolImagesPaths: [
       "python.png",
@@ -24,33 +36,36 @@ export const expCards = [
   },
   {
     logoPath: "singtel.png",
-    title: "DevOps Engineer (Intern)",
+    title: "DevOps Engineer",
     date: "September 2024 - June 2025",
     toolImagesPaths: [
       "linux.png",
       "ansible.png",
       "kubernetes.png",
       "terraform.png",
-      "mysql.png",
+      "jenkins.png",
     ],
     toolDescriptions: [
       "Managed Linux server infrastructure and automated system monitoring with custom shell scripts",
       "Implemented Ansible playbooks for consistent configuration management across development environments",
       "Containerized applications with Kubernetes for improved scalability and deployment efficiency",
       "Used Terraform to provision cloud resources and maintain infrastructure as code practices",
-      "Optimized MySQL database performance through query tuning and index management",
+      "Maintaining and troubleshooting Jenins Pipelines running on-prem",
     ],
     responsibilities: [
-      "Implemented system monitoring solutions",
-      "Automated infrastructure using IaC tools",
-      "Developed security data analysis scripts",
+      "Automated infrastructure provisioning using Terraform and standardized Kubernetes deployments with Helm",
+      "Maintained and enhanced Jenkins CI/CD pipelines to streamline software delivery and infrastructure automation",
+      "Implemented full-stack monitoring with Zabbix for infrastructure, network, and application performance metrics",
+      "Troubleshoot and performance-tuned critical data services including OpenSearch, MySQL, Redis, and MongoDB and Containers",
+      "Developed Python automation for security (IoC IP filtering) and operational (system health checks) tasks",
+      "Managed configuration and daily operations for containerized (Docker) and virtualized environments using Ansible",
     ],
     bgColor: "#f7f7f7",
   },
   {
-    logoPath: "sit.png",
-    title: "Software Engineer (Part-Time)",
-    date: "October 2023 - February 2024",
+    logoPath: "urban.png",
+    title: "Software Engineer",
+    date: "October 2022 - April 2023",
     toolImagesPaths: [
       "flutter.png",
       "nodejs.png",
@@ -66,15 +81,16 @@ export const expCards = [
       "Containerized applications with Docker for consistent deployment across environments",
     ],
     responsibilities: [
-      "Built React dashboard for urban farming analytics",
-      "Developed Express backend for sensor data",
+      "Engineered a full-stack web solution with a React frontend and Node.js/Express.js backend to create a centralized data aggregation hub for IoT sensors, processing real-time environmental metrics",
+      "Designed Intuitive Data Visualization Dashboard: Developed a responsive and user-friendly dashboard using React and Tailwind CSS to visually represent complex sensor data, transforming raw metrics into actionable insights on plant health and environmental conditions",
+      "Enabled Data-Driven Decision Making: By providing a single source of truth for sensor data, the dashboard empowered the urban farming team to optimize irrigation, lighting, and climate control, leading to improved crop yield and resource efficiency",
     ],
     bgColor: "#f7f7f7",
   },
   {
     logoPath: "sit.png",
-    title: "Software Engineer (Part-Time)",
-    date: "October 2022 - February 2023",
+    title: "Software Engineer",
+    date: "October 2023 - April 2024",
     toolImagesPaths: [
       "nodejs.png",
       "react.png",
@@ -88,14 +104,15 @@ export const expCards = [
       "Created Docker containers for application deployment and environment consistency",
     ],
     responsibilities: [
-      "Created Flutter-Firebase dashboard with data viz",
-      "Implemented auth and Excel export features",
+      "Architected a Scalable Data Management Platform: Engineered a full-stack web dashboard using Flutter for a unified cross-platform UI and Firebase (Firestore, Auth, Functions) for a completely serverless backend, reducing DevOps overhead and infrastructure costs",
+      "Delivered Advanced Business Intelligence Features: Implemented critical functionalities including dynamic data visualization charts, automated Excel report generation for stakeholder reviews, and a secure role-based access control (RBAC) system, transforming raw data into actionable insights for the entire team",
+      "Optimized Operational Efficiency: The dashboard automated manual data aggregation and reporting processes, saving an estimated 10+ person-hours per week and enabling real-time, data-driven decision-making for key business units",
     ],
     bgColor: "#f7f7f7",
   },
   {
     logoPath: "venture.png",
-    title: "Data Analyst (Intern)",
+    title: "Data Analyst",
     date: "April 2019 - July 2019",
     toolImagesPaths: [
       "tableau.png",

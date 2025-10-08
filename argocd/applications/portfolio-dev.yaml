@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/joe44824/portfolio.git
-    targetRevision: develop
+    targetRevision: dev
     path: k8s/overlays/dev
   destination:
     server: https://kubernetes.default.svc

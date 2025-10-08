@@ -4,18 +4,22 @@ import Navbar from "./sections/Navbar";
 import Footer from "./sections/Footer";
 import Certificates from "./sections/Certificate";
 import Contact from "./sections/Contact";
+import Test from "./sections/ArticleSteps";
+import ArticleHeader from "./sections/ArticleHeader";
 
-// TestTestgit 
+// TestTestgit
 
 const App = () => {
   return (
     <div>
-      <Navbar />
+      <ArticleHeader />
+      <Test />
+      {/* <Navbar />
       <Hero />
       <Experience />
       <Certificates />
       <Contact />
-      <Footer />
+      <Footer /> */}
     </div>
   );
 };

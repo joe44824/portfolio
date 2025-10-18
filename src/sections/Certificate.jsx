@@ -1,7 +1,8 @@
 import React from "react";
-import { Award, Calendar, ExternalLink, CheckCircle } from "lucide-react";
+import { Award, Calendar, ExternalLink, Lock, CheckCircle } from "lucide-react";
+import { certificates } from "../constants";
 
-// AnimatedBackground component
+// AnimatedBackground remains unchanged
 const AnimatedBackground = ({
   children,
   className = "",
@@ -72,33 +73,6 @@ const AnimatedBackground = ({
 };
 
 const Certificates = () => {
-  const certificates = [
-    {
-      id: 1,
-      name: "Certified Kubernetes Administrator (CKA)",
-      issuer: "Cloud Native Computing Foundation",
-      date: "2024",
-      status: "Active",
-      credentialId: "CKA-2024-001234",
-      verifyUrl: "#",
-      logo: "🚢",
-      color: "from-cyan-400 via-blue-500 to-purple-600",
-      skills: ["Kubernetes", "Container Orchestration", "Cluster Management"],
-    },
-    {
-      id: 2,
-      name: "AWS Certified Cloud Practitioner",
-      issuer: "Amazon Web Services",
-      date: "2023",
-      status: "Active",
-      credentialId: "AWS-CP-001234",
-      verifyUrl: "#",
-      logo: "☁️",
-      color: "from-orange-400 via-red-500 to-pink-600",
-      skills: ["AWS", "Cloud Fundamentals", "Cloud Services"],
-    },
-  ];
-
   return (
     <section id="certificates">
       <AnimatedBackground
@@ -138,7 +112,6 @@ const Certificates = () => {
                   </span>
                 </h1>
 
-                {/* Glowing underline */}
                 <div
                   className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-full"
                   style={{
@@ -153,28 +126,30 @@ const Certificates = () => {
                   animation: "fadeInUp 0.8s ease-out 0.3s forwards",
                 }}
               >
-                Showcasing my commitment to continuous learning and professional
-                development across
+                Showcasing my journey in mastering
                 <span className="text-cyan-400 font-semibold">
                   {" "}
-                  cloud technologies
+                  cloud infrastructure
                 </span>{" "}
                 and
                 <span className="text-blue-400 font-semibold">
                   {" "}
-                  DevOps practices
+                  scalable systems
                 </span>
-                .
+                — with more achievements on the horizon.
               </p>
 
               <div className="flex items-center justify-center gap-8 mt-10 text-sm text-gray-400">
                 <div className="flex items-center gap-3 bg-gray-800/50 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-700/50">
-                  <CheckCircle className="w-5 h-5 text-green-400" />
-                  <span>{certificates.length} Active Certifications</span>
+                  <Lock className="w-5 h-5 text-yellow-400" />
+                  <span>
+                    {certificates.filter((c) => c.status === "upcoming").length}{" "}
+                    Unlocking Soon
+                  </span>
                 </div>
                 <div className="flex items-center gap-3 bg-gray-800/50 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-700/50">
                   <Calendar className="w-5 h-5 text-blue-400" />
-                  <span>Updated 2024</span>
+                  <span>Updated Oct 2025</span>
                 </div>
               </div>
             </div>
@@ -184,7 +159,11 @@ const Certificates = () => {
               {certificates.map((cert) => (
                 <div
                   key={cert.id}
-                  className="group relative bg-gray-900/40 backdrop-blur-xl rounded-2xl border border-gray-800/50 overflow-hidden"
+                  className={`group relative rounded-2xl border overflow-hidden backdrop-blur-xl ${
+                    cert.status === "upcoming"
+                      ? "bg-gray-900/30 border-gray-700/40 opacity-80"
+                      : "bg-gray-900/40 border-gray-800/50"
+                  }`}
                 >
                   {/* Gradient Header */}
                   <div
@@ -194,19 +173,28 @@ const Certificates = () => {
 
                     {/* Logo */}
                     <div className="absolute top-6 right-6">
-                      <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                      <div className="w-14 h-14 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
                         <span className="text-3xl">{cert.logo}</span>
                       </div>
                     </div>
 
                     {/* Status Badge */}
                     <div className="absolute bottom-6 left-6">
-                      <div className="flex items-center gap-2 text-white bg-black/30 backdrop-blur-sm px-3 py-1 rounded-full">
-                        <CheckCircle className="w-4 h-4" />
-                        <span className="text-sm font-medium">
-                          {cert.status}
-                        </span>
-                      </div>
+                      {cert.status === "upcoming" ? (
+                        <div className="flex items-center gap-2 text-yellow-300 bg-black/30 backdrop-blur-sm px-3 py-1 rounded-full">
+                          <Lock className="w-4 h-4" />
+                          <span className="text-sm font-medium">
+                            Coming Soon
+                          </span>
+                        </div>
+                      ) : (
+                        <div className="flex items-center gap-2 text-white bg-black/30 backdrop-blur-sm px-3 py-1 rounded-full">
+                          <CheckCircle className="w-4 h-4" />
+                          <span className="text-sm font-medium">
+                            {cert.status}
+                          </span>
+                        </div>
+                      )}
                     </div>
                   </div>
 
@@ -229,28 +217,40 @@ const Certificates = () => {
                       {cert.skills.map((skill, idx) => (
                         <span
                           key={idx}
-                          className="px-3 py-1 bg-gradient-to-r from-gray-800 to-gray-700 text-gray-300 text-xs rounded-full font-medium border border-gray-600/50"
+                          className={`px-3 py-1 text-xs rounded-full font-medium ${
+                            cert.status === "upcoming"
+                              ? "bg-gray-800/60 text-gray-400 border border-gray-700/50"
+                              : "bg-gradient-to-r from-gray-800 to-gray-700 text-gray-300 border border-gray-600/50"
+                          }`}
                         >
                           {skill}
                         </span>
                       ))}
                     </div>
 
-                    {/* Credential Info */}
+                    {/* Note or Credential */}
                     <div className="border-t border-gray-800 pt-4">
-                      <p className="text-xs text-gray-500 mb-4">
-                        Credential ID:{" "}
-                        <span className="font-mono text-gray-400">
-                          {cert.credentialId}
-                        </span>
-                      </p>
-                      <a
-                        href={cert.verifyUrl}
-                        className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 text-sm font-medium transition-colors duration-200"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        Verify Certificate
-                      </a>
+                      {cert.status === "upcoming" ? (
+                        <p className="text-xs text-gray-500 italic">
+                          {cert.note || "Preparing for certification"}
+                        </p>
+                      ) : (
+                        <>
+                          <p className="text-xs text-gray-500 mb-4">
+                            Credential ID:{" "}
+                            <span className="font-mono text-gray-400">
+                              {cert.credentialId}
+                            </span>
+                          </p>
+                          <a
+                            href={cert.verifyUrl}
+                            className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 text-sm font-medium transition-colors duration-200"
+                          >
+                            <ExternalLink className="w-4 h-4" />
+                            Verify Certificate
+                          </a>
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>

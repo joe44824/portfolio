@@ -7,19 +7,16 @@ import Contact from "./sections/Contact";
 import Test from "./sections/ArticleSteps";
 import ArticleHeader from "./sections/ArticleHeader";
 
-// TestTestgit
 
 const App = () => {
   return (
     <div>
-      <ArticleHeader />
-      <Test />
-      {/* <Navbar />
+      <Navbar />
       <Hero />
       <Experience />
       <Certificates />
       <Contact />
-      <Footer /> */}
+      <Footer />
     </div>
   );
 };

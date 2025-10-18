@@ -133,3 +133,41 @@ export const expCards = [
     bgColor: "#f7f7f7",
   },
 ];
+
+export const certificates = [
+  {
+    id: 1,
+    name: "Certified Kubernetes Administrator (CKA)",
+    issuer: "Cloud Native Computing Foundation",
+    date: "Expected Oct 2025",
+    status: "upcoming",
+    logo: "🔒",
+    color: "from-gray-600 via-gray-700 to-gray-800",
+    skills: ["Kubernetes", "Cluster Security", "Troubleshooting"],
+    note: "Preparing for exam",
+  },
+  {
+    id: 2,
+    name: "AWS Certified Solutions Architect – Associate",
+    issuer: "Amazon Web Services",
+    date: "Expected Nov 2025",
+    status: "upcoming",
+    logo: "🔒",
+    color: "from-gray-600 via-gray-700 to-gray-800",
+    skills: ["AWS Architecture", "High Availability", "Cost Optimization"],
+    note: "In progress",
+  },
+  // Example of an active cert (you can keep or remove)
+  // {
+  //   id: 3,
+  //   name: "AWS Certified Cloud Practitioner",
+  //   issuer: "Amazon Web Services",
+  //   date: "2023",
+  //   status: "active",
+  //   credentialId: "AWS-CP-001234",
+  //   verifyUrl: "#",
+  //   logo: "☁️",
+  //   color: "from-orange-400 via-red-500 to-pink-600",
+  //   skills: ["AWS", "Cloud Fundamentals", "Cloud Services"],
+  // },
+];

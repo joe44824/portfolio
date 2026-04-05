@@ -8,6 +8,6 @@ metadata:
     backstage.io/techdocs-ref: dir:.
 spec:
   type: website
-  owner: joe44824
+  owner: development
   lifecycle: experimental
 

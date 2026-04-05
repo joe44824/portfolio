@@ -7,6 +7,6 @@ metadata:
     github.com/project-slug: joe44824/portfolio
 spec:
   type: website
-  owner: joe44824
+  owner: development
   lifecycle: experimental
 

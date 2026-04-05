@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: web-portfolio
+  description: personal portfolio website
+  annotations:
+    github.com/project-slug: joe44824/portfolio
+spec:
+  type: website
+  owner: joe44824
+  lifecycle: experimental
+

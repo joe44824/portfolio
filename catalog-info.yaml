@@ -5,6 +5,7 @@ metadata:
   description: personal portfolio website
   annotations:
     github.com/project-slug: joe44824/portfolio
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: website
   owner: joe44824

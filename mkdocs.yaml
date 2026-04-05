@@ -1,0 +1,12 @@
+site_name: 'Web Portfolio'
+site_description: 'Personal web portofolio'
+repo_url: https://github.com/joe44824/portfolio
+edit_uri: edit/master/docs
+
+plugins:
+  - techdocs-core
+
+# For sidebar navigation on https://backstage.io/, see `microsite/sidebars.js`
+nav:
+  - Overview:
+      - getting-started: 'docs/index.md'
